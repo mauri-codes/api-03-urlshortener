@@ -23,7 +23,7 @@ var urlData = mongoose.model("urlData", urlSchema);
 app.set("port", process.env.PORT || 3000);
 
 app.get("/", function (request, response) {
-    response.send("Just send a url like this https://api-03-urlshortener.herokuapp.com/ and " +
+    response.send("Just send a url like this https://api-03-urlshortener.herokuapp.com/https://www.google.com and " +
         " I will make sure it is shortened.");
 });
 app.get("/https://:url", function (request, response) {
