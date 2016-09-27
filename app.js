@@ -36,8 +36,7 @@ app.get("/https://:url", function (request, response) {
         };
         var data = new urlData(item);
         data.save();
-
-        response.send("the url is  https://api-03-urlshortener.herokuapp.com/" + rand);
+        response.json({"original_url": myURL, "short_url": "https://api-03-urlshortener.herokuapp.com/" + rand});
     }
     else
         response.send("it is not a url :(  " + myURL);
@@ -52,7 +51,7 @@ app.get("/http://:url", function (request, response) {
         };
         var data = new urlData(item);
         data.save();
-        response.send("the url is  https://api-03-urlshortener.herokuapp.com/" + rand);
+        response.json({"original_url": myURL, "short_url": "https://api-03-urlshortener.herokuapp.com/" + rand});
     }
     else
         response.send("it is not a url :(  " + myURL);
