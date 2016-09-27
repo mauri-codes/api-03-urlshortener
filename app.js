@@ -23,7 +23,8 @@ var urlData = mongoose.model("urlData", urlSchema);
 app.set("port", process.env.PORT || 3000);
 
 app.get("/", function (request, response) {
-    response.send("Hello World!");
+    response.send("Just send a url like this https://api-03-urlshortener.herokuapp.com/ and " +
+        " I will make sure it is shortened.");
 });
 app.get("/https://:url", function (request, response) {
     var rand = parseInt(Math.random() * (50000 - 10000) + 10000);
@@ -36,7 +37,7 @@ app.get("/https://:url", function (request, response) {
         var data = new urlData(item);
         data.save();
 
-        response.send("the url is  https://api-03-urlshortener/" + rand);
+        response.send("the url is  https://api-03-urlshortener.herokuapp.com/" + rand);
     }
     else
         response.send("it is not a url :(  " + myURL);
@@ -51,7 +52,7 @@ app.get("/http://:url", function (request, response) {
         };
         var data = new urlData(item);
         data.save();
-        response.send("the url is  https://api-03-urlshortener/" + rand);
+        response.send("the url is  https://api-03-urlshortener.herokuapp.com/" + rand);
     }
     else
         response.send("it is not a url :(  " + myURL);
