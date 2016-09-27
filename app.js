@@ -8,7 +8,7 @@ var mongoose = require("mongoose");
 var app = express();
 
 //mongoose.connect("localhost:27017/test");
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect(process.env.MONGOLAB);
 var Schema = mongoose.Schema;
 
 var urlSchema = mongoose.Schema({
